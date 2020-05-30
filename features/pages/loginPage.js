@@ -7,19 +7,19 @@ var loginPage = function () {
     var successLogin = element(by.css('.flash_notice'));
 
     this.clickSignInButton = function() {
-        browser.wait(ExpectedConditions.elementToBeClickable(signInButton), 3000);
+        browser.wait(ExpectedConditions.elementToBeClickable(signInButton), 5000);
         signInButton.click();
     };
 
     this.signUp = function(email, password) {
-        browser.wait(ExpectedConditions.visibilityOf(userEmail), 3000);
+        browser.wait(ExpectedConditions.visibilityOf(userEmail), 5000);
         userEmail.sendKeys(email);
-        browser.wait(ExpectedConditions.visibilityOf(userPassword), 3000);
+        browser.wait(ExpectedConditions.visibilityOf(userPassword), 5000);
         userPassword.sendKeys(password);
     };
 
     this.validateIsLoggedIn = function() {
-        browser.wait(ExpectedConditions.visibilityOf(logo), 5000);
+        browser.wait(ExpectedConditions.visibilityOf(logo), 10000);
         browser.wait(ExpectedConditions.visibilityOf(successLogin), 5000);
         return successLogin.isDisplayed();
     };
