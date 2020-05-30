@@ -1,17 +1,20 @@
 {
-    "name": "qa-gap-david-acevedo",
-    "version": "1.0.0",
-    "description": "Solution to gap test",
-    "author": "David Acevedo",
-    "license": "MIT",
-    "scripts": {
-      "tsc": "tsc",
-      "pretest": "npm run tsc",
-      "test": "protractor tmp/conf.js",
-      "debug": "node --inspect-brk ./node_modules/.bin/protractor asyncAwait/conf.js"
-    },
-    "dependencies": {
-      "protractor": "7.0.0",
-      "typescript": "~2.0.0"
-    }
+  "name": "qa-gap-david-acevedo",
+  "description": "Solution to test of GAp, automation with protractor and cucumber",
+  "repository": "https://github.com/davidacealgo/qa-gap",
+  "author": "David Acevedo",
+  "license": "MIT",
+  "devDependencies": {
+    "cucumber": "~1.3.2",
+    "protractor": "7.0.0",
+    "protractor-cucumber-framework": "6.2.1",
+    "typescript": "~2.0.0"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "pretest": "npm run tsc",
+    "protractor": "protractor conf/conf.js",
+    "debug": "node --inspect-brk ./node_modules/.bin/protractor asyncAwait/conf.js",
+    "start-webdriver": "webdriver-manager start"
   }
+}
