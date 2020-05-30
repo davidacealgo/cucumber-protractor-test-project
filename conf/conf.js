@@ -10,9 +10,15 @@ exports.config = {
 
     framework: 'jasmine',
 
-    specs: ['simple_test.js'],
+    suites: {
+        createUser: '../tests/CreateUser/Spec.js',
+        homepage: '../tests/HomePage/Spec.js',
+        login: '../tests/Login/Spec.js',
+        userList: '../tests/UserList/Spec.js'
+    },
 
     jasmineModeOpts: {
-        defaultTimeoutInterval: 3000
+        defaultTimeoutInterval: 3000,
+        showColors: true
     }
 };
