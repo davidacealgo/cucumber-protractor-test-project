@@ -13,21 +13,14 @@ exports.config = {
 
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
-    
-    params: {
-        testEnv: 'test'
-    },
 
-    specs: { //Define shich tests should execute
-        login: 'features/login.feature'
-    },
-    logLevel: 'verbose',
+    specs: [ //Define shich tests should execute
+       'features/*.feature'
+    ],
     coloredLogs: true,
 
     cucumberOpts: {
-        require: 'features/stepDefinitions/loginSteps.js',
-        format: 'pretty',
-        'no-source': true,
+        require: ['./features/stepDefinitions/*.js'],
         profile: false,
         tags: false
     }

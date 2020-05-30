@@ -3,15 +3,11 @@ Feature: Login into vacation management GAP website
     I want to login into vacations management GAp page
 
 Background:
-    Given I navigate to "https://vacations-management.herokuapp.com/"
+    Given I launch url
 
 Scenario: Login with valid credentials 
     When I enter email and password as valid
         | email | gap-automation-test@mailinator.com |
         | password | 12345678 |
     And I click on login button
-    Then verify the user logged in
-
-
-
-    
+    Then verify that the user is logged in
