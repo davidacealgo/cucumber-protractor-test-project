@@ -10,7 +10,7 @@ Scenario: Login with valid credentials
         | email | gap-automation-test@mailinator.com |
         | password | 12345678 |
     And I click on login button
-    Then I am able to login
+    Then verify the user logged in
 
 
 
