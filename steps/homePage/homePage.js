@@ -10,7 +10,6 @@ var homePage = function() {
 
     this.isHomePage = async function() {
         browser.wait(ExpectedConditions.visibilityOf(successLogin), 8000);
-        await browser.sleep(5000);
         return (browser.getCurrentUrl());
     };
 
@@ -31,7 +30,6 @@ var homePage = function() {
     
     this.openCreateUser = async function() {
         await createUserButton.click();
-        await browser.sleep(5000);
     }
 };
 module.exports = new homePage();

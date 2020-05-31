@@ -36,8 +36,8 @@ defineSupportCode(function({Given, When, Then}) {
         await createUserPage.fillFormNewEmployee(firstName, lastName, email, identification, leaderName);
     });
 
-    When('I select start working in {string} and {string} and {string}', async (year, month, day) => {
-        await createUserPage.setDateEmployee(year, month, day);
+    When('I select start working in {string} and {string} and {string}', async (day, month, year) => {
+        await createUserPage.setDateEmployee(day, month, year);
     });
 
     When('I click create Employee button', async () => {

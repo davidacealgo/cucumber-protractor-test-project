@@ -15,4 +15,4 @@ Scenario Outline: Create a new employee
 
 Examples:
     | url | email | password | firstName| lastName | email | identification | leaderName | day | month | year |
-    | https://vacations-management.herokuapp.com/ | gap-automation-test@mailinator.com | 12345678 | James | Smith | jamess@g.co | 1234567890 | James | 21 | January | 2015 |
+    | https://vacations-management.herokuapp.com/ | gap-automation-test@mailinator.com | 12345678 | James | Smith | jamess@g.co | 1234567890 | James | 21 | 1 | 2015 |
