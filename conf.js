@@ -4,24 +4,28 @@
 exports.config = {
     directConnect: true,
 
-    getPageTimeOut: 10000,
-    allScriptsTimeout: 30000,
+    getPageTimeOut: 20000,
+    allScriptsTimeout: 50000,
 
     capabilities: {
-        "browserName": 'firefox'
+        "browserName": 'chrome',
+        chromeOptions: {
+            args: ['--no-sandbox']
+        }
     },
 
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     specs: [ //Define shich tests should execute
-       'features/*.feature'
+       './features/*.feature'
     ],
     coloredLogs: true,
 
     cucumberOpts: {
-        require: ['./features/stepDefinitions/*.js'],
+        require: ['./steps/loginSteps.js'],
         profile: false,
         tags: false
-    }
+    },
+    seleniumServerStartTimeout: 9000
 };
