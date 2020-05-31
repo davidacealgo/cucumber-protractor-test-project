@@ -24,7 +24,7 @@ var loginPage = function() {
         browser.ignoreSynchronization = true;
         browser.waitForAngularEnabled(false);
         await browser.wait(ExpectedConditions.elementToBeClickable(signInButton), 5000);
-        signInButton.click();
+        await signInButton.click();
     }
 };
 module.exports = new loginPage();

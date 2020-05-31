@@ -33,6 +33,7 @@ defineSupportCode(function({Given, When, Then}) {
 
     Then('I should see name user logged in', async () => {
         await expect(homePage.loggedUser()).to.eventually.equal(true);
+        await homePage.delete();
     });
 
     Then('I should see the logo of GAP', async () => {

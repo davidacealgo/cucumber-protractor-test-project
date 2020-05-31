@@ -21,7 +21,6 @@ var createUserPage = function() {
         await newEmail.sendKeys(email);
         await id.sendKeys(identification);
         await leaderN.sendKeys(leaderName);
-        await browser.sleep(5000);
     };
 
     this.setDateEmployee = async function(day, month, year) {
