@@ -18,12 +18,12 @@ defineSupportCode(function ({Given, When, Then}) {
     next();
   });
 
-  When('I click on login button', function (next) {
+  Then('I click on login button', function (next) {
     loginPage.clickSignInButton();
     next();
   });
-
-  Then('verify that the user is logged in', function(next) {
+/*
+  Then('I am logged in', function(next) {
     expect(loginPage.validateIsLoggedIn()).to.eventually.equal(true).and.notify(next);
-  });
+  });*/
 });

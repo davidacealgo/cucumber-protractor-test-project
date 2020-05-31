@@ -1,12 +1,11 @@
 Feature: Login into vacation management GAP website
     As a user
-    I want to login into vacations management GAp page
+    I want to login into vacations management Gap page
 
 Scenario Outline: Login with valid credentials 
     Given I launch "<url>"
     When I enter "<email>" and "<password>"
-    And I click on login button
-    Then verify that the user is logged in
+    Then I click on login button
 
 Examples:
     | url| email | password |
