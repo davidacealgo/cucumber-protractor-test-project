@@ -45,7 +45,7 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     Then('user is created', async() => {
-        expect (await createUserPage.userCreated()).to.eventually.equal(true);
+        await expect (createUserPage.userCreated()).to.eventually.equal(true);
     });
     
 });

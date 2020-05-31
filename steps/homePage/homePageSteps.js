@@ -24,18 +24,18 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     When('the system redirect me to homepage', async () => {
-        expect (await homePage.isHomePage()).to.eventually.equal('https://vacations-management.herokuapp.com/');
+        await expect (homePage.isHomePage()).to.eventually.equal('https://vacations-management.herokuapp.com/');
     });
 
     Then('I should see message of successfully logged in', async () => {
-        expect(await homePage.successLoggedIn()).to.eventually.equal(true);
+        await expect(homePage.successLoggedIn()).to.eventually.equal(true);
     });
 
     Then('I should see name user logged in', async () => {
-        expect(await homePage.loggedUser()).to.eventually.equal(true);
+        await expect(homePage.loggedUser()).to.eventually.equal(true);
     });
 
     Then('I should see the logo of GAP', async () => {
-        expect(await homePage.homePageLogo()).to.eventually.equal(true);
+        await expect(homePage.homePageLogo()).to.eventually.equal(true);
     });
 });
