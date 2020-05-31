@@ -1,37 +1,38 @@
-var loginPage = function () {
+'use strict';
+module.exports = {
 
-    var logo = element(by.css('#logo_text'));
-    var userEmail = element(by.id('user_email'));
-    var userPassword = element(by.id('user_password'));
-    var signInButton = element(by.css('.submit'));
-    var successLogin = element(by.css('.flash_notice'));
+    loginPage: {
+        logo: element(by.css('#logo_text')),
+        userEmail: element(by.id('user_email')),
+        userPassword: element(by.id('user_password')),
+        signInButton: element(by.css('.submit')),
+        successLogin: element(by.css('.flash_notice'))
+    },
 
-    this.get = function(url) {
-        return browser.get(url);
-    };
+    get: function(url) {
+        browser.ignoreSynchronization = true;
+        browser.waitForAngularEnabled(false);
+        browser.get(url);
+    },
 
-    this.setCredentials = function(email, password) {
-        browser.sleep(5000);
-        browser.wait(ExpectedConditions.visibilityOf(userEmail), 50000);
-        userEmail.sendKeys(email);
-        userPassword.sendKeys(password);
+    setCredentials: function(email, password) {
+        var login = this.loginPage;
+        browser.ignoreSynchronization = true;
+        browser.waitForAngularEnabled(false);
+        login.userEmail.sendKeys(email);
+        login.userPassword.sendKeys(password);
+    },
+
+    clickSignInButton: function() {
+        var login = this.loginPage;
+        browser.wait(ExpectedConditions.elementToBeClickable(login.signInButton), 50000);
+        login.signInButton.click();
+    },
+
+    validateIsLoggedIn: function() {
+        var login = this.loginPage;
+        browser.wait(ExpectedConditions.visibilityOf(login.logo), 50000);
+        browser.wait(ExpectedConditions.visibilityOf(login.successLogin), 50000);
+        return login.successLogin.isDisplayed();
     }
-
-    this.clickSignInButton = function() {
-        browser.wait(ExpectedConditions.elementToBeClickable(signInButton), 50000);
-        browser.sleep(5000);
-        return signInButton.click();
-    };
-
-    this.validateIsLoggedIn = function() {
-        browser.wait(ExpectedConditions.visibilityOf(logo), 50000);
-        browser.wait(ExpectedConditions.visibilityOf(successLogin), 50000);
-        return successLogin.isDisplayed();
-    };
-
-    this.getText = function() {
-        return successLogin.getText();
-    };
 };
-
-module.exports = new loginPage();

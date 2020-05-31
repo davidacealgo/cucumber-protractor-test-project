@@ -8,27 +8,22 @@ var expect = chai.expect;
 setDefaultTimeout(60 * 1000);
 
 defineSupportCode(function ({Given, When, Then}) {
-
-  Given('I launch {string}', function (string) {
-    browser.ignoreSynchronization = true;
-    browser.waitForAngularEnabled(false);
+  Given('I launch {string}', function (string, next) {
     loginPage.get(string);
+    next();
   });
 
-  When('I enter {string} and {string}', function (string, string2) {
-    browser.ignoreSynchronization = true;
-    browser.waitForAngularEnabled(false);
+  When('I enter {string} and {string}', function (string, string2, next) {
     loginPage.setCredentials(string, string2);
+    next();
   });
 
-  When('I click on login button', function () {
-    browser.ignoreSynchronization = true;
-    browser.waitForAngularEnabled(false);
+  When('I click on login button', function (next) {
     loginPage.clickSignInButton();
+    next();
   });
 
-  Then('verify that the user is logged in', async() => {
-    //expect(loginPage.getText()).to.eventually.equal("Signed in successfully.");
-    expect(loginPage.validateIsLoggedIn()).to.eventually.equal(true);
+  Then('verify that the user is logged in', function(next) {
+    expect(loginPage.validateIsLoggedIn()).to.eventually.equal(true).and.notify(next);
   });
 });
