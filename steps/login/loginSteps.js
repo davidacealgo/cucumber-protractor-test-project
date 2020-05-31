@@ -1,7 +1,7 @@
 var {defineSupportCode, setDefaultTimeout} = require('cucumber');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
-var loginPage = require('../src/pages/loginPage.js');
+var loginPage = require('./loginPage.js');
 
 chai.use(chaiAsPromised);
 var expect = chai.expect;

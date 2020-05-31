@@ -8,5 +8,5 @@ Scenario Outline: Login with valid credentials
     Then I click on login button
 
 Examples:
-    | url| email | password |
+    | url | email | password |
     | https://vacations-management.herokuapp.com/ | gap-automation-test@mailinator.com | 12345678 |
