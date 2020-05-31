@@ -1,0 +1,29 @@
+{
+    "env": {
+        "browser": true,
+        "mocha": true,
+        "protractor": true
+    },
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {"SwitchCase": 1}
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "no-prototype-builtins": "off",
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "complexity": [
+          "error",
+          {"max": 19}
+        ]
+    }
+}

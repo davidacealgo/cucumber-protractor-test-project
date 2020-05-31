@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // To run this example, first transpile it to javascript with `npm run tsc`,
 // then run `protractor conf.js`.
 // An example configuration file
@@ -8,7 +9,7 @@ exports.config = {
     allScriptsTimeout: 50000,
 
     capabilities: {
-        "browserName": 'chrome',
+        'browserName': 'chrome',
         chromeOptions: {
             args: ['--no-sandbox']
         }
@@ -18,7 +19,7 @@ exports.config = {
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     specs: [
-       './features/createUser.feature',
+        './features/createUser.feature',
     ],
     coloredLogs: true,
 
@@ -29,5 +30,6 @@ exports.config = {
         profile: false,
         tags: false
     },
-    seleniumServerStartTimeout: 9000
+    seleniumServerStartTimeout: 9000,
+    SELENIUM_PROMISE_MANAGER: false
 };

@@ -1,32 +1,32 @@
+/* eslint-disable no-undef */
 'use strict';
 
-module.exports = {
+var loginPage = function() {
+    
+    var signInButton =  element(by.css('.submit'));
+    var userEmail = element(by.id('user_email'));
+    var userPassword = element(by.id('user_password'));
 
-    loginPage: {
-        signInButton: element(by.css('.submit')),
-        userEmail: element(by.id('user_email')),
-        userPassword: element(by.id('user_password'))
-    },
-
-    get: function(url) {
+    this.get = async function(url) {
         browser.ignoreSynchronization = true;
         browser.waitForAngularEnabled(false);
-        browser.get(url);
-    },
+        await browser.get(url);
+    };
 
-    setCredentials: function(email, password) {
-        var login = this.loginPage;
+    this.setCredentials = async function(email, password) {
         browser.ignoreSynchronization = true;
         browser.waitForAngularEnabled(false);
-        login.userEmail.sendKeys(email);
-        login.userPassword.sendKeys(password);
-    },
+        await userEmail.sendKeys(email);
+        await userPassword.sendKeys(password);
+    };
 
-    clickSignInButton: function() {
-        var login = this.loginPage;
+    this.clickSignInButton = async function() {
         browser.ignoreSynchronization = true;
         browser.waitForAngularEnabled(false);
-        browser.wait(ExpectedConditions.elementToBeClickable(login.signInButton), 50000);
-        login.signInButton.click();
+        await browser.wait(ExpectedConditions.elementToBeClickable(signInButton), 5000);
+        await browser.sleep(5000).then(function() {
+            signInButton.click();
+        });
     }
 };
+module.exports = new loginPage();

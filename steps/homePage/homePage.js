@@ -1,34 +1,37 @@
+/* eslint-disable no-undef */
 'use strict';
 
-module.exports = {
-    homePage: {
-        logo: element(by.css('#logo')),
-        successLogin: element(by.css('.flash_notice')),
-        userLogged: element(by.css('#user_information'))
-    },
+var homePage = function() {
+    var createUserButton = element(by.css('#content > p > a'));
+    var logo = element(by.css('#logo'));
+    var successLogin = element(by.css('.flash_notice'));
+    var userLogged = element(by.css('#user_information'));
 
-    isHomePage: function() {
-        var home = this.homePage;
-        browser.wait(ExpectedConditions.visibilityOf(home.userLogged), 8000);
-        browser.sleep(5000);
+
+    this.isHomePage = async function() {
+        browser.wait(ExpectedConditions.visibilityOf(successLogin), 8000);
+        await browser.sleep(5000);
         return (browser.getCurrentUrl());
-    },
+    };
 
-    successLoggedIn: function() {
-        var home = this.homePage;
-        browser.wait(ExpectedConditions.visibilityOf(home.successLogin), 8000);
-        return home.successLogin.isDisplayed();
-    },
+    this.successLoggedIn = async function() {
+        browser.wait(ExpectedConditions.visibilityOf(successLogin), 8000);
+        return successLogin.isDisplayed();
+    };
 
-    loggedUser: function() {
-        var home = this.homePage;
-        browser.wait(ExpectedConditions.visibilityOf(home.userLogged), 8000);
-        return home.userLogged.isDisplayed();
-    },
+    this.loggedUser = async function() {
+        browser.wait(ExpectedConditions.visibilityOf(userLogged), 8000);
+        return userLogged.isDisplayed();
+    };
 
-    homePageLogo: function() {
-        var home = this.homePage;
-        browser.wait(ExpectedConditions.visibilityOf(home.logo), 8000);
-        return home.logo.isDisplayed();
+    this.homePageLogo = async function() {
+        browser.wait(ExpectedConditions.visibilityOf(logo), 8000);
+        return logo.isDisplayed();
+    },
+    
+    this.openCreateUser = async function() {
+        await createUserButton.click();
+        await browser.sleep(5000);
     }
 };
+module.exports = new homePage();

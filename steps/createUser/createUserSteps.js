@@ -1,7 +1,8 @@
+/* eslint-disable no-undef */
 var {defineSupportCode, setDefaultTimeout} = require('cucumber');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
-var createUSerPage = require('./createUserPage.js');
+var createUserPage = require('./createUserPage.js');
 var homePage = require('../homePage/homePage.js');
 var loginPage = require('../login/loginPage.js');
 
@@ -11,53 +12,40 @@ setDefaultTimeout(60 * 1000);
 
 defineSupportCode(function({Given, When, Then}) {
 
-    Given('I am logged in', function () {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
-    });
-       
-    Given('I launch {string}', function (string, next) {
-        loginPage.get(string);
-        next();
+    Given('I launch {string}', async (string) => {
+        await loginPage.get(string);
     });
     
-    Given('I enter {string} and {string}', function (email, pwd, next) {
-        loginPage.setCredentials(email, pwd);
-        next();
+    Given('I enter {string} and {string}', async (email, pwd) => {
+        await loginPage.setCredentials(email, pwd);
     });
     
-    Given('I click on login button', function (next) {
-        loginPage.clickSignInButton();
-        next();
+    Given('I click on login button', async () => {
+        await loginPage.clickSignInButton();
     });
 
-    Given('I am on homepage', function (next) {
-        expect (homePage.isHomePage()).to.eventually.equal('https://vacations-management.herokuapp.com/').and.notify(next);
+    Given('I am on homepage', async () => {
+        await expect (homePage.isHomePage()).to.eventually.equal('https://vacations-management.herokuapp.com/');
     });
 
-    When('I go to create user', function (next) {
-        createUSerPage.OpenCreateUser();
-        next();
+    When('I go to create user', async () => {
+        await homePage.openCreateUser();
     });
 
-    When('I create a user with {string} and {string} and {string} and {string} and {string}', function (string, string2, string3, string4, string5) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+    When('I create a user with {string} and {string} and {string} and {string} and {string}', async (firstName, lastName, email, identification, leaderName) => {
+        await createUserPage.fillFormNewEmployee(firstName, lastName, email, identification, leaderName);
     });
 
-    When('I select start working in {string} and {string} and {string}', function (string, string2, string3) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+    When('I select start working in {string} and {string} and {string}', async (year, month, day) => {
+        await createUserPage.setDateEmployee(year, month, day);
     });
 
-    When('I click create Employee button', function () {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+    When('I click create Employee button', async () => {
+        await createUserPage.clickEmployeeButton();
     });
 
-    Then('user is logged in', function () {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+    Then('user is created', async() => {
+        expect (await createUserPage.userCreated()).to.eventually.equal(true);
     });
     
 });
