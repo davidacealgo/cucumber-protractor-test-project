@@ -25,7 +25,7 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     Given('I am on homepage', async () => {
-        await expect (homePage.isHomePage()).to.eventually.equal('https://vacations-management.herokuapp.com/');
+        expect (homePage.isHomePage()).to.eventually.equal('https://vacations-management.herokuapp.com/');
     });
 
     When('I go to create user', async () => {
@@ -45,7 +45,7 @@ defineSupportCode(function({Given, When, Then}) {
     });
 
     Then('user is created', async() => {
-        await expect (createUserPage.userCreated()).to.eventually.equal(true);
+        expect (createUserPage.userCreated()).to.eventually.equal(true);
     });
     
 });
