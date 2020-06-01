@@ -33,7 +33,7 @@ defineSupportCode(function({Given, When, Then}) {
 
     //Considering that identification is unique
     Then('the employee with {string} does not appear in the employee table', async (id) => {
-        expect (await userListPage.searchEmployee(id)).to.equal(false);
+        expect (await userListPage.searchEmployee(id)).to.equal('undefined');
     });
 
 });
