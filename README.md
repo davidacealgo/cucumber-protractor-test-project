@@ -1,14 +1,13 @@
-# Solution to QA Automation Test
-Creator: David Acevedo G
+# Testing not Angular page with cucumber and protractor using Page Object Model
 
 To enjoy the project first run: <br/> `npm install`
 
-To install the webdrivers used by protractor run: <br/> `webdriver-manager update`
+Install the webdrivers used by protractor run: <br/> `webdriver-manager update`
 
 Run the tests with:<br/>
-`protractor loginConf.js` <br/>
-`protractor userListConf.js`<br/>
-`protractor createUserConf.js`
+`protractor conf/loginConf.js` <br/>
+`protractor conf/userListConf.js`<br/>
+`protractor conf/createUserConf.js`
 
 # Built with
 
