@@ -3,7 +3,6 @@
 // then run `protractor conf.js`.
 // An example configuration file
 exports.config = {
-
     directConnect: true,
 
     getPageTimeOut: 20000,
@@ -20,18 +19,17 @@ exports.config = {
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     specs: [
-        './e2e/features/login.feature'
+        '../e2e/features/createUser.feature',
     ],
     coloredLogs: true,
 
     cucumberOpts: {
         require: [
-            './e2e/steps/loginSteps.js',
-            './e2e/steps/homePageSteps.js'
+            '../e2e/steps/createUserSteps.js'
         ],
         profile: false,
         tags: false,
-        format: 'json:login.json'
+        format: 'json:./reports/createUser.json'
     },
     seleniumServerStartTimeout: 9000,
     //just maximizing window before testing
@@ -43,8 +41,8 @@ exports.config = {
         var reporter = require('cucumber-html-reporter');
         var options = {
             theme: 'bootstrap',
-            jsonFile: './reports/login.json',
-            output: './reports/loginResults.html',
+            jsonFile: './reports/createUser.json',
+            output: './reports/createUserResults.html',
             reportSuiteAsScenarios: true,
             launchReport: true,
             metadata: {
@@ -57,4 +55,5 @@ exports.config = {
         reporter.generate(options);
     },
     SELENIUM_PROMISE_MANAGER: false
+
 };

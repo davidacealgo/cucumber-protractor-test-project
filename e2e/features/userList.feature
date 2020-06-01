@@ -1,6 +1,6 @@
-Feature: Actions to a new user
+Feature:  Actions in user list
     As a user
-    I want to delete  a new user of vacations management Gap page
+    I want to delete a new user of vacations management Gap page
 
 Scenario Outline: Delete employee
     Given I launch "<url>"

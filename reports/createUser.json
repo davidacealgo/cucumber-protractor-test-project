@@ -1,0 +1,151 @@
+[
+  {
+    "description": "    As a user\n    I want to create a new user into vacations management Gap page",
+    "keyword": "Feature",
+    "name": "Create a new user",
+    "line": 1,
+    "id": "create-a-new-user",
+    "tags": [],
+    "uri": "e2e/features/createUser.feature",
+    "elements": [
+      {
+        "id": "create-a-new-user;create-a-new-employee",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Create a new employee",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I launch \"https://vacations-management.herokuapp.com/\"",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I enter \"gap-automation-test@mailinator.com\" and \"12345678\"",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 564000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click on login button",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1439000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I am on homepage",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I go to create user",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 480000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I create a user with \"James\" and \"Smith\" and \"gap-automation-test@mailinator.com\" and \"1234567890\" and \"James\"",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:36"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1556000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I select start working in \"21\" and \"1\" and \"2015\"",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1326000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click create Employee button",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 561000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "user is created",
+            "match": {
+              "location": "Acevedo/e2e/steps/createUserSteps.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
