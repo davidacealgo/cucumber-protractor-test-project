@@ -11,7 +11,7 @@ Scenario Outline: Verify that homepage appears if user is logged in
     Given I launch "<url>"
     And I enter "<email>" and "<password>"
     And I click on login button
-    When the system redirect me to homepage
+    When I am on the homepage
     Then I should see message of successfully logged in
     And I should see name user logged in
     And I should see the logo of GAP

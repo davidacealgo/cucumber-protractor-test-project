@@ -19,14 +19,13 @@ exports.config = {
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     specs: [
-        './features/user.feature',
+        './features/createUser.feature',
     ],
     coloredLogs: true,
 
     cucumberOpts: {
         require: [
-            './steps/userList/deleteEmployeeSteps.js',
-            './steps/userList/validateEmployeeSteps.js'
+            './steps/createUser/createUserSteps.js'
         ],
         profile: false,
         tags: false

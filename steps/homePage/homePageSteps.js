@@ -3,27 +3,14 @@ var {defineSupportCode, setDefaultTimeout} = require('cucumber');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
 var homePage = require('./homePage.js');
-var loginPage = require('../login/loginPage.js');
 
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 setDefaultTimeout(60 * 1000);
 
-defineSupportCode(function({Given, When, Then}) {
+defineSupportCode(function({When, Then}) {
 
-    Given('I launch {string}', async (string) => {
-        await loginPage.get(string);
-    });
-    
-    Given('I enter {string} and {string}', async (email, pwd) => {
-        await loginPage.setCredentials(email, pwd);
-    });
-    
-    Given('I click on login button', async () => {
-        await loginPage.clickSignInButton();
-    });
-
-    When('the system redirect me to homepage', async () => {
+    When('I am on the homepage', async () => {
         await expect (homePage.isHomePage()).to.eventually.equal('https://vacations-management.herokuapp.com/');
     });
 
@@ -33,7 +20,6 @@ defineSupportCode(function({Given, When, Then}) {
 
     Then('I should see name user logged in', async () => {
         await expect(homePage.loggedUser()).to.eventually.equal(true);
-        await homePage.delete();
     });
 
     Then('I should see the logo of GAP', async () => {
