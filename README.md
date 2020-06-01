@@ -1,10 +1,12 @@
 # Solution to QA Automation Test
 Creator: David Acevedo G
 
-Install npm and protractor
+To enjoy the project first run: <br/> `npm install`
 
-To install the webdrivers used by protractor Run: webdriver-manager update 
+To install the webdrivers used by protractor run: <br/> `webdriver-manager update`
 
-Run the tests with:
-                    protractor conf/conf.js --suite "name_of_suite"
+Run the tests with:<br/>
+`protractor loginConf.js` <br/>
+`protractor userConf.js`<br/>
+`protractor createUserConf.js`
 
