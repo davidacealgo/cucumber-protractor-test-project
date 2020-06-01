@@ -2,7 +2,7 @@
 var {defineSupportCode, setDefaultTimeout} = require('cucumber');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
-var loginPage = require('./loginPage.js');
+var loginPage = require('../../pages/loginPage.js');
 
 chai.use(chaiAsPromised);
 setDefaultTimeout(60 * 1000);

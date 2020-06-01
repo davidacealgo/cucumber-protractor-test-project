@@ -1,0 +1,125 @@
+[
+  {
+    "description": "    As a user\n    I want to login into vacations management Gap page and validate that I am logged in",
+    "keyword": "Feature",
+    "name": "Login into vacation management GAP website",
+    "line": 1,
+    "id": "login-into-vacation-management-gap-website",
+    "tags": [],
+    "uri": "e2e/features/login.feature",
+    "elements": [
+      {
+        "id": "login-into-vacation-management-gap-website;verify-that-homepage-appears-if-user-is-logged-in",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Verify that homepage appears if user is logged in",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "I launch \"https://vacations-management.herokuapp.com/\"",
+            "match": {
+              "location": "Acevedo/e2e/steps/loginSteps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3420000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I enter \"gap-automation-test@mailinator.com\" and \"12345678\"",
+            "match": {
+              "location": "Acevedo/e2e/steps/loginSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1143000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on login button",
+            "match": {
+              "location": "Acevedo/e2e/steps/loginSteps.js:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1515000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I am on the homepage",
+            "match": {
+              "location": "Acevedo/e2e/steps/homePageSteps.js:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 121000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I should see message of successfully logged in",
+            "match": {
+              "location": "Acevedo/e2e/steps/homePageSteps.js:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 119000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I should see name user logged in",
+            "match": {
+              "location": "Acevedo/e2e/steps/homePageSteps.js:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 144000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I should see the logo of GAP",
+            "match": {
+              "location": "Acevedo/e2e/steps/homePageSteps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 127000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/protractor-cucumber-framework/lib/resultsCapturer.js:27"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

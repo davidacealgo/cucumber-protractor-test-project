@@ -6,6 +6,22 @@ var userListPage = function() {
     var employees = element.all(by.xpath('//tr'));
 
     this.deleteEmployee = async function(id) {
+        var userRow = await this.getUserRow(id);
+        await element(by.xpath(`//tr[${userRow}]/td[9]/a`)).click();
+        browser.wait(ExpectedConditions.alertIsPresent(), 5000);
+        await browser.switchTo().alert().accept();
+    };
+
+    this.searchEmployee = async function(id) {
+        var userExists = await this.getUserRow(id);
+        if (userExists != 0) {
+            return true;
+        } else {
+            return false
+        }
+    };
+
+    this.getUserRow = async function(id) {
         browser.ignoreSynchronization = true;
         browser.waitForAngularEnabled(false);
         var length = await employees.count();
@@ -19,17 +35,8 @@ var userListPage = function() {
                 auxRow = row;
                 row=length+1;
             }
-        }
-        await element(by.xpath(`//tr[${auxRow}]/td[9]/a`)).click();
-        browser.wait(ExpectedConditions.alertIsPresent(), 5000);
-        await browser.switchTo().alert().accept();
-    };
-
-    this.searchEmployee = async function(id) {
-        browser.ignoreSynchronization = true;
-        browser.waitForAngularEnabled(false);
-        var employee = await element(by.xpath(`//td[.="${id}"]`));
-        return employee;
-    };
+        } 
+        return auxRow;
+    }
 }   
 module.exports = new userListPage();

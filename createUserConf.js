@@ -19,17 +19,41 @@ exports.config = {
     frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     specs: [
-        './features/createUser.feature',
+        './e2e/features/createUser.feature',
     ],
     coloredLogs: true,
 
     cucumberOpts: {
         require: [
-            './steps/createUser/createUserSteps.js'
+            './e2e/steps/createUserSteps.js'
         ],
         profile: false,
-        tags: false
+        tags: false,
+        format: 'json:createUser.json'
     },
     seleniumServerStartTimeout: 9000,
+    //just maximizing window before testing
+    onPrepare: function(){
+        browser.waitForAngularEnabled(false);
+    } ,
+    //Create html report 
+    onComplete: () => {
+        var reporter = require('cucumber-html-reporter');
+        var options = {
+            theme: 'bootstrap',
+            jsonFile: './createUser.json',
+            output: './reports/createUserResults.html',
+            reportSuiteAsScenarios: true,
+            launchReport: true,
+            metadata: {
+                'Browser': 'Chrome  83.0.4103.61',
+                'Platform': 'Ubuntu',
+                'Parallel': 'Scenarios',
+                'Executed': 'Remote'
+            }
+        };
+        reporter.generate(options);
+    },
     SELENIUM_PROMISE_MANAGER: false
+
 };

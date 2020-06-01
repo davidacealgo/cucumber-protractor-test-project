@@ -2,7 +2,7 @@
 var {defineSupportCode, setDefaultTimeout} = require('cucumber');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
-var homePage = require('./homePage.js');
+var homePage = require('../../pages/homePage.js');
 
 chai.use(chaiAsPromised);
 var expect = chai.expect;

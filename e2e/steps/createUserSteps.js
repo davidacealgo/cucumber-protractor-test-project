@@ -2,9 +2,10 @@
 var {defineSupportCode, setDefaultTimeout} = require('cucumber');
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
-var createUserPage = require('./createUserPage.js');
-var homePage = require('../homePage/homePage.js');
-var loginPage = require('../login/loginPage.js');
+var createUserPage = require('../../pages/createUserPage.js');
+var homePage = require('../../pages/homePage.js');
+var loginPage = require('../../pages/loginPage.js');
+
 
 chai.use(chaiAsPromised);
 var expect = chai.expect;
@@ -15,11 +16,11 @@ defineSupportCode(function({Given, When, Then}) {
     Given('I launch {string}', async (string) => {
         await loginPage.get(string);
     });
-    
-    Given('I enter {string} and {string}', async (email, pwd) => {
-        await loginPage.setCredentials(email, pwd);
+
+    Given('I enter {string} and {string}', async (string, string2) => {
+        await loginPage.setCredentials(string, string2);
     });
-    
+
     Given('I click on login button', async () => {
         await loginPage.clickSignInButton();
     });
