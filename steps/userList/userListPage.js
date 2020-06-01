@@ -8,13 +8,19 @@ var userListPage = function() {
     this.deleteEmployee = async function(id) {
         browser.ignoreSynchronization = true;
         browser.waitForAngularEnabled(false);
-        var i = await employees.count();
-        
-        for(let k=1; k<=i; k++) {
-            var del = element(by.xpath(`//*[@id="content"]/table/tbody/tr["${i}"]/td[.="${id}"]`));
-            console.log(await del.getText());
+        var length = await employees.count();
+        var auxRow = 0;
+        var row = 2;
+        var content = '';
+        for(row; row<=length; row++) {
+            var del = element(by.xpath(`//tr[${row}]/td[3]`));
+            content = await del.getText();
+            if (content === id){
+                auxRow = row;
+                row=length+1;
+            }
         }
-        await del.click();
+        await element(by.xpath(`//tr[${auxRow}]/td[9]/a`)).click();
         browser.wait(ExpectedConditions.alertIsPresent(), 5000);
         await browser.switchTo().alert().accept();
     };

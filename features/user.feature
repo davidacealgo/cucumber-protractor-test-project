@@ -14,9 +14,9 @@ Scenario Outline: Delete employee
     And I enter "<email>" and "<password>"
     And I click on login button
     When I go to "<homepage>"
-    And I delete the employee
+    And I delete the employee with "<id>"
     Then the employee with "<id>" does not appear in the employee table
 
 Examples:
     | url | email | password | id | homepage |
-    | https://vacations-management.herokuapp.com/ | gap-automation-test@mailinator.com | 12345678 | 123456789 | https://vacations-management.herokuapp.com/employees |
+    | https://vacations-management.herokuapp.com/ | gap-automation-test@mailinator.com | 12345678 | 1234567 | https://vacations-management.herokuapp.com/employees |

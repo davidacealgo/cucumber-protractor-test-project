@@ -27,13 +27,13 @@ defineSupportCode(function({Given, When, Then}) {
         await (loginPage.get(string));
     });
 
-    When('I delete the employee', async () => {
-        await userListPage.deleteEmployee();
+    When('I delete the employee with {string}', async (id) => {
+        await userListPage.deleteEmployee(id);
     });
 
     //Considering that identification is unique
     Then('the employee with {string} does not appear in the employee table', async (id) => {
-        expect (await userListPage.searchEmployee(id)).to.equal('undefined');
+        expect (await userListPage.deleteEmployee(id)).to.equal('undefined');
     });
 
 });
