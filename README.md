@@ -2,7 +2,7 @@
 
 To enjoy the project first run: <br/> `npm install`
 
-Install the webdrivers used by protractor run: <br/> `webdriver-manager update`
+Install the webdrivers used by protractor run as super user: <br/> `webdriver-manager update`
 
 Run the tests with:<br/>
 `protractor conf/loginConf.js` <br/>
