@@ -1,4 +1,4 @@
-# Solution to QA Automation Test
+# Testing not Angular page with cucumber and protractor using Page Object Model
 Creator: David Acevedo G
 
 To enjoy the project first run: <br/> `npm install`
