@@ -7,6 +7,20 @@ To install the webdrivers used by protractor run: <br/> `webdriver-manager updat
 
 Run the tests with:<br/>
 `protractor loginConf.js` <br/>
-`protractor userConf.js`<br/>
+`protractor userListConf.js`<br/>
 `protractor createUserConf.js`
 
+# Built with
+
+[Protractor](https://www.protractortest.org/#/) <br/>
+[Protractor-cucumber-framework](https://www.npmjs.com/package/protractor-cucumber-framework)</br>
+[Chai-as-promised](https://www.npmjs.com/package/chai-as-promised)
+
+Reports with 
+------------
+[protractor-html-reporter-2](https://www.npmjs.com/package/protractor-html-reporter-2)
+
+Author
+--------
+David Alejandro Acevedo García
+davidacevedo115@gmail.com
